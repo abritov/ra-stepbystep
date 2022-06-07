@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import {
+  Admin,
+  ListGuesser,
+  Resource,
+  List,
+  Datagrid,
+  TextField,
+  ReferenceArrayField,
+  SingleFieldList,
+  ChipField,
+} from "react-admin";
+import fakeDataProvider from "ra-data-fakerest";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const dataProvider = fakeDataProvider({
+  users: [
+    { id: 0, name: "root", roles: [1, 2, 3] },
+    { id: 1, name: "peter", roles: [1, 2] },
+  ],
+  roles: [
+    { id: 1, name: "DEVELOPER" },
+    { id: 2, name: "MODERATOR" },
+    { id: 3, name: "ADMIN" },
+  ],
+});
+
+const UserList = () => (
+  <List>
+    <Datagrid>
+      <TextField source="id" />
+      <TextField source="name" />
+      <ReferenceArrayField source="roles" reference="roles">
+        <SingleFieldList linkType={false}>
+          <ChipField source="name" />
+        </SingleFieldList>
+      </ReferenceArrayField>
+    </Datagrid>
+  </List>
+);
+
+const App = () => (
+  <Admin dataProvider={dataProvider}>
+    <Resource name="users" list={ListGuesser} />
+  </Admin>
+);
 
 export default App;
