@@ -1,7 +1,6 @@
 import * as React from "react";
 import {
   Admin,
-  ListGuesser,
   Resource,
   List,
   Datagrid,
@@ -40,7 +39,7 @@ const UserList = () => (
 
 const App = () => (
   <Admin dataProvider={dataProvider}>
-    <Resource name="users" list={ListGuesser} />
+    <Resource name="users" list={UserList} />
   </Admin>
 );
 
