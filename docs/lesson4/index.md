@@ -50,6 +50,6 @@ export default App;
 Если у вас браузер не сафари, тогда вы увидите такую страничку:
 ![Компонент ListGuesser](../user-list-component.jpg)
 
-[Пятый урок](./docs/lesson5/index.md)
+[Пятый урок](../lesson5/index.md)
 
 Задать вопросы можно в [группе](https://t.me/learn_you_react_admin/16) в телеграмме

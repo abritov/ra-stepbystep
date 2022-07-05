@@ -9,6 +9,6 @@
 
 ![Вывод команды установки react-admin](../react-admin-install-success.jpg)
 
-Если все ок, следующий [Урок 4](./docs/lesson4/index.md)
+Если все ок, следующий [Урок 4](../lesson4/index.md)
 
 Задать вопросы можно в [группе](https://t.me/learn_you_react_admin/11) в телеграмме
